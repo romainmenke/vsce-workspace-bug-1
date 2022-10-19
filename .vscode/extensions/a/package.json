@@ -1,0 +1,41 @@
+{
+	"name": "vscode-extension-a",
+	"version": "0.1.10",
+	"private": true,
+	"displayName": "A",
+	"description": "A",
+	"author": "Mr. Henry",
+	"publisher": "mrhenry",
+	"engines": {
+		"vscode": "^1.65.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {},
+	"scripts": {
+		"compile": "webpack",
+		"lint": "npm exec eslint -- --max-warnings=10 --fix \"src/**/*.ts\"",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"publish": "vsce publish --allow-missing-repository --noVerify",
+		"vsce": "vsce",
+		"vscode:prepublish": "npm run package",
+		"watch": "webpack --watch"
+	},
+	"devDependencies": {
+		"@types/node": "14.x",
+		"@types/vscode": "^1.65.0",
+		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.5",
+		"vsce": "^2.9.2",
+		"webpack": "^5.69.1",
+		"webpack-cli": "^4.9.2"
+	},
+	"volta": {
+		"extends": "../../../package.json"
+	}
+}

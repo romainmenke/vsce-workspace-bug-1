@@ -1,0 +1,8 @@
+{
+	"private": true,
+	"name": "@mrhenry/a",
+	"version": "0.0.0",
+	"volta": {
+		"node": "18.9.0"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"private": true,
+	"name": "@mrhenry/root",
+	"version": "0.0.0",
+	"workspaces": [
+		"projects/*"
+	],
+	"volta": {
+		"node": "18.9.0"
+	}
+}
