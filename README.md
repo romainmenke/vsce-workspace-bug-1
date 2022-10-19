@@ -34,3 +34,23 @@ npm run vsce ls
 dist/extension.js
 package.json
 ```
+
+The only difference between `.vscode/extensions` and `.vscode-no-workspaces/extensions` is that `./vscode/extensions` has a `package.json` file to make it a workspace root :
+
+```json
+{
+	"name": "@mrhenry/vscode-extensions",
+	"private": true,
+	"description": "",
+	"workspaces": [
+		"./*"
+	],
+	"scripts": {
+		"compile": "npm run compile --workspaces --if-present",
+		"lint": "npm run lint --workspaces --if-present",
+		"publish": "npm run publish --workspaces",
+		"version:minor": "npm --workspaces version minor --no-git-tag-version",
+		"version:patch": "npm --workspaces version patch --no-git-tag-version"
+	}
+}
+```
